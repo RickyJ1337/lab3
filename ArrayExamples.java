@@ -4,7 +4,7 @@ public class ArrayExamples {
 
   // Changes the input array to be in reversed order
   static void reverseInPlace(int[] arr) {
-    for(int i = 0; i < arr.length / 2; i += 1) {
+    for(int i = 0; i < arr.length / 2; i += 1) { //need to divide array length by 2
       int temp = arr[i];
       arr[i] = arr[arr.length - i - 1];
       arr[arr.length - i - 1] = temp; //Missing code, needs a temp variable to reverse array properly
@@ -27,12 +27,12 @@ public class ArrayExamples {
   static double averageWithoutLowest(double[] arr) {
     if(arr.length < 2) { return 0.0; }
     double lowest = arr[0];
-    for(double num: arr) {
-      if(num < lowest) { lowest = num; }
+    for(int i = 0; i < arr.length; i++) {
+      if(arr[i] < lowest) { lowest = arr[i]; }
     }
     double sum = 0;
-    for(double num: arr) {
-      if(num != lowest) { sum += num; }
+    for(int i = 0; i < arr.length; i++) {
+      if(arr[i] != lowest) { sum += arr[i]; }
     }
     return sum / (arr.length - 1);
   }
